@@ -19,6 +19,8 @@ function displayPosts(posts){
 }
 
 
+// api post method
+
 fetch ('https://jsonplaceholder.typicode.com/posts', { 
     method: 'post',
     body: JSON.stringify({
@@ -33,5 +35,6 @@ fetch ('https://jsonplaceholder.typicode.com/posts', {
 })
 .then(resp => resp.JSON())
 .then(data => console.log(data))
+
 
 // please practise 
