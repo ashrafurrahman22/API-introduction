@@ -3,7 +3,7 @@ function loadPosts(){
     .then(res => res.json())
     .then(data => displayPosts(data) )
 }
-loadPosts();
+// loadPosts();
 
 function displayPosts(posts){
     const postContainer = document.getElementById('posts');
@@ -38,3 +38,27 @@ fetch ('https://jsonplaceholder.typicode.com/posts', {
 
 
 // please practise 
+
+
+function load(){
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .then(data => loadData(data) )
+}
+
+function loadData(data){
+    const unorderedList = document.getElementById('ul')
+        for(const info of data){
+            const li = document.createElement('li');
+            li.style.textAlign = 'center' ;
+            li.style.margin = '10px' ;
+            li.style.padding = '10px' ;
+            li.style.border = '2px solid black' ;
+            li.style.listStyle = 'none' ;
+            li.style.backgroundColor = 'lightblue' ;
+            li.innerText = `${info.title}  ${info.body}`;
+            unorderedList.appendChild(li);
+
+        }
+    
+}
